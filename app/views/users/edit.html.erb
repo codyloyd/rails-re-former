@@ -1,0 +1,9 @@
+<div class="container">
+<h1>EDIT ME</h1>
+<%= form_for @user do |f| %>
+  Username: <%= f.text_field :username, value: "SUP HOMIE"  %>
+  Email: <%= f.text_field :email, placeholder: "example@example.com" %>
+  Password: <%= f.password_field :password %>
+  <%= f.submit %>
+<% end %>
+</div>

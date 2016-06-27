@@ -1,12 +1,31 @@
-<div class="container">
+<!-- <div class="container">
   <form action="/users" method="post" accept-charset="UTF-8">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <label for="email">email:</label>
-    <input type="text" name="email" value="">
+    <input type="text" name="user[email]" value="">
     <label for="username">username:</label>
-    <input type="text" name="username" value="">
+    <input type="text" name="user[username]" value="">
     <label for="password">password:</label>
-    <input type="password" name="password">
+    <input type="password" name="user[password]">
     <input type="submit" name="submit" value="SUBMIT">
   </form>
+</div> -->
+
+<!-- <%= form_tag("/users") do %>
+  <%= label_tag(:username, "Username:") %>
+  <%= text_field_tag(:username) %>
+  <%= label_tag(:email, "Email:") %>
+  <%= text_field_tag(:email) %>
+  <%= label_tag(:password, "Password") %>
+  <%= password_field_tag(:password) %>
+  <%= submit_tag("SUBMIT") %>
+<% end  %> -->
+<div class="container">
+
+<%= form_for @user do |f| %>
+  Username: <%= f.text_field :username, value: "SUP HOMIE"  %>
+  Email: <%= f.text_field :email, placeholder: "example@example.com" %>
+  Password: <%= f.password_field :password %>
+  <%= f.submit %>
+<% end %>
 </div>
